@@ -6,4 +6,4 @@
   overrideValues:
     image: $RELATED_IMAGE_CIC
     exporter.image: $RELATED_IMAGE_EXPORTER
-# +kubebuilder:scaffold:watch
+#+kubebuilder:scaffold:watch

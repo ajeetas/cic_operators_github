@@ -1,5 +1,5 @@
 # Build the manager binary
-FROM quay.io/operator-framework/helm-operator:v1.3.0
+FROM quay.io/operator-framework/helm-operator:v1.5.1
 
 LABEL name="Citrix Ingress Controller Operator" \
       vendor="Citrix" \
@@ -7,8 +7,8 @@ LABEL name="Citrix Ingress Controller Operator" \
       release="1" \
       summary="This is an Citrix Ingress Controller helm operator." \
       description="This operator will deploy Citrix Ingress Controller to the cluster."
-COPY licenses /licenses
 
+COPY licenses /licenses
 ENV HOME=/opt/helm
 COPY watches.yaml ${HOME}/watches.yaml
 COPY helm-charts  ${HOME}/helm-charts

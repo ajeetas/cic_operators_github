@@ -3,4 +3,4 @@
 # It should be run by config/default
 resources:
 - bases/citrix.com_citrixingresscontrollers.yaml
-# +kubebuilder:scaffold:crdkustomizeresource
+#+kubebuilder:scaffold:crdkustomizeresource

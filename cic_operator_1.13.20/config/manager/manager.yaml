@@ -23,11 +23,23 @@ spec:
         control-plane: controller-manager
     spec:
       containers:
-      - image: quay.io/ajeetas/cic-operator-image:1.13.20_4
+      - image: quay.io/ajeetas/cicoperatorimage:1.13.20_1
         args:
         - "--enable-leader-election"
         - "--leader-election-id=citrix-ingress-controller-operator"
         name: manager
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8081
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8081
+          initialDelaySeconds: 5
+          periodSeconds: 10
         resources:
           limits:
             cpu: 100m
