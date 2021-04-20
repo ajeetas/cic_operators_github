@@ -8,6 +8,15 @@ LABEL name="Citrix Ingress Controller Operator" \
       summary="This is an Citrix Ingress Controller helm operator." \
       description="This operator will deploy Citrix Ingress Controller to the cluster."
 
+USER root
+RUN microdnf install yum
+RUN microdnf update -y
+RUN yum  -y update-minimal --security --sec-severity=Important --sec-severity=Critical
+RUN yum clean all
+RUN microdnf remove yum
+RUN microdnf clean all
+USER helm
+
 COPY licenses /licenses
 ENV HOME=/opt/helm
 COPY watches.yaml ${HOME}/watches.yaml

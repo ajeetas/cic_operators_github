@@ -8,7 +8,7 @@ metadata:
           "apiVersion": "citrix.com/v1alpha1",
           "kind": "CitrixIngressController",
           "metadata": {
-            "name": "citrixingresscontroller-sample"
+            "name": "cic"
           },
           "spec": {
             "adcCredentialSecret": "",
@@ -93,7 +93,7 @@ metadata:
     capabilities: Basic Install
     categories: Networking
     description: Citrix provides an ingress controller for Citrix ADC MPX (hardware), Citrix ADC VPX (virtualized), and Citrix ADC CPX (containerized) for on-prem and cloud deployments. It automatically configures one or more Citrix ADC based on the Ingress resource configuration. This operator can be used deploy Citrix Ingress Controller in an Openshift environment.
-    containerImage: quay.io/ajeetas/cicoperatorimage:1.13.20_1
+    containerImage: registry.connect.redhat.com/citrix/citrix-k8s-ingress-controller:1.13.20_6
     createdAt: 2021-04-05T14:16:17Z
     support: Citrix
     repository: https://github.com/citrix/citrix-k8s-ingress-controller
@@ -270,10 +270,10 @@ spec:
                 - --leader-election-id=citrix-ingress-controller-operator
                 env:
                 - name: RELATED_IMAGE_CIC
-                  value: registry.connect.redhat.com/citrix/citrix-ingress-controller:latest
+                  value: registry.connect.redhat.com/citrix/citrix-ingress-controller:1.13.20
                 - name: RELATED_IMAGE_EXPORTER
-                  value: registry.connect.redhat.com/citrix/citrix-adc-metrics-exporter:latest
-                image: quay.io/ajeetas/cicoperatorimage:1.13.20_1
+                  value: registry.connect.redhat.com/citrix/citrix-adc-metrics-exporter:1.4.7
+                image: registry.connect.redhat.com/citrix/citrix-k8s-ingress-controller:1.13.20_6
                 livenessProbe:
                   httpGet:
                     path: /healthz
