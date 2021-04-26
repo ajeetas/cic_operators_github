@@ -18,7 +18,7 @@ LABEL operators.operatorframework.io.test.config.v1=tests/scorecard/
 #Add these labels
 LABEL com.redhat.openshift.versions="v4.6"
 LABEL com.redhat.delivery.operator.bundle=true
-LABEL com.redhat.delivery.backport=true
+#LABEL com.redhat.delivery.backport=true
 
 # Copy files to locations specified by labels.
 COPY bundle/manifests /manifests/
