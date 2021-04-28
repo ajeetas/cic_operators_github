@@ -414,7 +414,6 @@ spec:
   - email: ajeeta.shakeet@citrix.com
     name: Ajeeta Shakeet
   maturity: alpha
-  skips: [citrix-cpx-with-ingress-controller-operator.v1.10.2,cpx-cic-operator.v130.36.29]
   provider:
     name: citrix
   version: 1.13.20
